@@ -19,9 +19,11 @@
 
 package com.example.customerservice.client;
 
+import static org.junit.Assert.assertEquals;
+
 import java.util.List;
 
-import junit.framework.Assert;
+import org.junit.Test;
 
 import com.example.wsdlbugstudiosoapwizard.Customer;
 import com.example.wsdlbugstudiosoapwizard.WsdlBugStudioSOAPWizardService;
@@ -41,6 +43,7 @@ public final class CustomerServiceTester {
 		this.customerService = customerService;
 	}
 
+	@Test
 	public void testCustomerService() {
 		List<Customer> customers = null;
 
@@ -50,8 +53,8 @@ public final class CustomerServiceTester {
 		System.out.println("Sending request for customers named Smith");
 		customers = customerService.getCustomersByName("Smith");
 		System.out.println("Response received");
-		Assert.assertEquals(2, customers.size());
-		Assert.assertEquals("Smith", customers.get(0).getName());
+		assertEquals(2, customers.size());
+		assertEquals("Smith", customers.get(0).getName());
 		customers = customerService.getCustomersByName("None");
 		// Assert.fail("We should get a NoSuchCustomerException here");
 
