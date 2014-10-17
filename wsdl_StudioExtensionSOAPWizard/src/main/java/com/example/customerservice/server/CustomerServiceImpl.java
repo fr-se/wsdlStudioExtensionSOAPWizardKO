@@ -18,63 +18,47 @@
  */
 package com.example.customerservice.server;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.GregorianCalendar;
 import java.util.List;
 
 import javax.annotation.Resource;
 import javax.xml.ws.WebServiceContext;
 
-import com.example.customerservice.Customer;
-import com.example.customerservice.CustomerService;
-import com.example.customerservice.CustomerType;
-import com.example.customerservice.NoSuchCustomer;
-import com.example.customerservice.NoSuchCustomerException;
+import com.example.wsdlbugstudiosoapwizard.Customer;
+import com.example.wsdlbugstudiosoapwizard.WsdlBugStudioSOAPWizardService;
 
-public class CustomerServiceImpl implements CustomerService {
-    
-    /**
-     * The WebServiceContext can be used to retrieve special attributes like the 
-     * user principal. Normally it is not needed
-     */
-    @Resource
-    WebServiceContext wsContext;
+public class CustomerServiceImpl implements WsdlBugStudioSOAPWizardService {
 
-    public List<Customer> getCustomersByName(String name) throws NoSuchCustomerException {
-        if ("None".equals(name)) {
-            NoSuchCustomer noSuchCustomer = new NoSuchCustomer();
-            noSuchCustomer.setCustomerName(name);
-            throw new NoSuchCustomerException("Did not find any matching customer for name=" + name,
-                                              noSuchCustomer);
-        }
+	/**
+	 * The WebServiceContext can be used to retrieve special attributes like the
+	 * user principal. Normally it is not needed
+	 */
+	@Resource
+	WebServiceContext wsContext;
 
-        List<Customer> customers = new ArrayList<Customer>();
-        for (int c = 0; c < 2; c++) {
-            Customer cust = new Customer();
-            cust.setName(name);
-            cust.getAddress().add("Pine Street 200");
-            Date bDate = new GregorianCalendar(2009, 01, 01).getTime();
-            cust.setBirthDate(bDate);
-            cust.setNumOrders(1);
-            cust.setRevenue(10000);
-            cust.setTest(new BigDecimal(1.5));
-            cust.setType(CustomerType.BUSINESS);
-            customers.add(cust);
-        }
+	public List<Customer> getCustomersByName(String name) {
+		if ("None".equals(name)) {
+			// do something fun
+		}
 
-        return customers;
-    }
+		List<Customer> customers = new ArrayList<Customer>();
+		for (int c = 0; c < 2; c++) {
+			Customer cust = new Customer();
+			cust.setName(name);
+			customers.add(cust);
+		}
 
-    public void updateCustomer(Customer customer) {
-        System.out.println("update request was received");
-        try {
-            Thread.sleep(10000);
-        } catch (InterruptedException e) {
-            // Nothing to do here
-        }
-        System.out.println("Customer was updated");
-    }
+		return customers;
+	}
+
+	public void updateCustomer(Customer customer) {
+		System.out.println("update request was received");
+		try {
+			Thread.sleep(10000);
+		} catch (InterruptedException e) {
+			// Nothing to do here
+		}
+		System.out.println("Customer was updated");
+	}
 
 }

@@ -57,7 +57,7 @@
 			</wsdl:output>
 		</wsdl:operation>
 	</wsdl:binding>
-	<wsdl:service name="wsdlBugStudioSOAPWizardService">
+	<wsdl:service name="wsdlBugStudioSOAPWizardServiceService">
 		<wsdl:port name="wsdlBugStudioSOAPWizardServicePort" binding="tns:wsdlBugStudioSOAPWizardServiceSoapBinding">
 			<!-- embedded deployment -->
 			<soap:address location="http://localhost:9090/wsdlBugStudioSOAPWizardServicePort" />

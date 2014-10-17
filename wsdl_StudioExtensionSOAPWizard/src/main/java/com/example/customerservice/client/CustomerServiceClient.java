@@ -21,15 +21,15 @@ package com.example.customerservice.client;
 import java.io.File;
 import java.net.URL;
 
-import com.example.customerservice.CustomerService;
-import com.example.customerservice.CustomerServiceService;
+import com.example.wsdlbugstudiosoapwizard.WsdlBugStudioSOAPWizardService;
+import com.example.wsdlbugstudiosoapwizard.WsdlBugStudioSOAPWizardServiceService;
 
 public class CustomerServiceClient {
     protected CustomerServiceClient() {
     }
     
     public static void main(String args[]) throws Exception {
-        CustomerServiceService customerServiceService;
+        WsdlBugStudioSOAPWizardServiceService wsdlBugStudioSOAPWizardServiceService;
         if (args.length != 0 && args[0].length() != 0) {
             File wsdlFile = new File(args[0]);
             URL wsdlURL;
@@ -39,13 +39,13 @@ public class CustomerServiceClient {
                 wsdlURL = new URL(args[0]);
             }
             // Create the service client with specified wsdlurl
-            customerServiceService = new CustomerServiceService(wsdlURL);
+            wsdlBugStudioSOAPWizardServiceService = new WsdlBugStudioSOAPWizardServiceService(wsdlURL);
         } else {
             // Create the service client with its default wsdlurl
-            customerServiceService = new CustomerServiceService();
+            wsdlBugStudioSOAPWizardServiceService = new WsdlBugStudioSOAPWizardServiceService();
         }
 
-        CustomerService customerService = customerServiceService.getCustomerServicePort();
+        WsdlBugStudioSOAPWizardService customerService = wsdlBugStudioSOAPWizardServiceService.getWsdlBugStudioSOAPWizardServicePort();
         
         // Initialize the test class and call the tests
         CustomerServiceTester client = new CustomerServiceTester();

@@ -21,18 +21,18 @@ package com.example.customerservice.server;
 
 import javax.xml.ws.Endpoint;
 
-import com.example.customerservice.CustomerService;
-
 import org.apache.cxf.interceptor.LoggingInInterceptor;
 import org.apache.cxf.interceptor.LoggingOutInterceptor;
 import org.apache.cxf.jaxws.EndpointImpl;
+
+import com.example.wsdlbugstudiosoapwizard.WsdlBugStudioSOAPWizardService;
 
 public class CustomerServiceServer {
 
     protected CustomerServiceServer() throws Exception {
         System.out.println("Starting Server");
-        CustomerService implementor = new CustomerServiceImpl();
-        EndpointImpl ep = (EndpointImpl)Endpoint.publish("http://localhost:9090/CustomerServicePort",
+        WsdlBugStudioSOAPWizardService implementor = new CustomerServiceImpl();
+        EndpointImpl ep = (EndpointImpl)Endpoint.publish("http://localhost:9090/wsdlBugStudioSOAPWizardServicePort",
                                                          implementor);
 
         // Adding logging for incoming and outgoing messages
