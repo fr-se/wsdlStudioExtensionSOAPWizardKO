@@ -84,7 +84,7 @@
                         <configuration>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>src/main/resources/wsdlBugStudioSOAPWizardService.wsdl.wsdl</wsdl>
+                                    <wsdl>src/main/resources/wsdlBugStudioSOAPWizardService.wsdl</wsdl>
                                     <frontEnd>jaxws21</frontEnd>
                                     <faultSerialVersionUID>1</faultSerialVersionUID>
                                     <bindingFiles>
@@ -180,7 +180,7 @@
                                 <configuration>
                                     <mainClass>com.example.customerservice.client.CustomerServiceClient</mainClass>
                                     <arguments>
-                                        <argument>src/main/resources/CustomerService.wsdl</argument>
+                                        <argument>src/main/resources/wsdlBugStudioSOAPWizardService.wsdl</argument>
                                     </arguments>
                                 </configuration>
                             </execution>
@@ -206,7 +206,7 @@
                                 <configuration>
                                     <mainClass>com.example.customerservice.client.CustomerServiceClient</mainClass>
                                     <arguments>
-                                        <argument>src/main/resources/CustomerService.wsdl</argument>
+                                        <argument>src/main/resources/wsdlBugStudioSOAPWizardService.wsdl</argument>
                                     </arguments>
                                 </configuration>
                             </execution>

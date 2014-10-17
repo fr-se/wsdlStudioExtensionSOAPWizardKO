@@ -24,7 +24,7 @@
             <entry key="schema-validation-enabled" value="true"/>
         </jaxws:properties>
     </jaxws:client>
-    <jaxws:endpoint name="{http://apache.org/hello_world_soap_http}SoapPort" wsdlLocation="wsdl/CustomerService.wsdl" createdFromAPI="true">
+    <jaxws:endpoint name="{http://apache.org/hello_world_soap_http}SoapPort" wsdlLocation="wsdl/wsdlBugStudioSOAPWizardService.wsdl" createdFromAPI="true">
         <jaxws:properties>
             <entry key="schema-validation-enabled" value="true"/>
         </jaxws:properties>

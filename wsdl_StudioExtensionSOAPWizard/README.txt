@@ -92,7 +92,7 @@ start up the server and client:
 
 If you're using Tomcat (embedded or standalone) for the web service provider:
 ----------------------------------------------------
-1.) Update the soap:address value in the resources/CustomerService.wsdl value,
+1.) Update the soap:address value in the resources/wsdlBugStudioSOAPWizardService.wsdl value,
 switching the soap:address value to the servlet-specific one (presently
 commented-out).
 
