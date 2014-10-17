@@ -84,7 +84,7 @@
                         <configuration>
                             <wsdlOptions>
                                 <wsdlOption>
-                                    <wsdl>src/main/resources/CustomerService.wsdl</wsdl>
+                                    <wsdl>src/main/resources/wsdlBugStudioSOAPWizardService.wsdl.wsdl</wsdl>
                                     <frontEnd>jaxws21</frontEnd>
                                     <faultSerialVersionUID>1</faultSerialVersionUID>
                                     <bindingFiles>
