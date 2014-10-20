@@ -1,40 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
-	xmlns:tns="http://wsdlBugStudioSOAPWizard.example.com/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="wsdlBugStudioSOAPWizardService"
+<wsdl:definitions name="wsdlBugStudioSOAPWizardService"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsdl="http://wsdlBugStudioSOAPWizard.example.com/types/"
+	xmlns:tns="http://wsdlBugStudioSOAPWizard.example.com/"
 	targetNamespace="http://wsdlBugStudioSOAPWizard.example.com/">
-	<wsdl:types>
-		<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-			xmlns:tns="http://wsdlBugStudioSOAPWizard.example.com/" attributeFormDefault="unqualified"
-			elementFormDefault="unqualified" targetNamespace="http://wsdlBugStudioSOAPWizard.example.com/">
-			<xs:element name="getCustomersByName" type="tns:getCustomersByName" />
-			<xs:element name="getCustomersByNameResponse" type="tns:getCustomersByNameResponse" />
-			<xs:complexType name="customer">
-				<xs:sequence>
-					<xs:element minOccurs="0" name="name" type="xs:string" />
-				</xs:sequence>
-			</xs:complexType>
-			<xs:complexType name="getCustomersByName">
-				<xs:sequence>
-					<xs:element minOccurs="0" name="name" type="xs:string" />
-				</xs:sequence>
-			</xs:complexType>
-			<xs:complexType name="getCustomersByNameResponse">
-				<xs:sequence>
-					<xs:element maxOccurs="unbounded" minOccurs="0" name="return"
-						type="tns:customer" />
-				</xs:sequence>
-			</xs:complexType>
-		</xs:schema>
-	</wsdl:types>
+
+	<wsdl:import
+		location="file:///Users/jantonio/GitHub/wsdlStudioExtensionSOAPWizardKO/wsdl_StudioExtensionSOAPWizard/src/main/resources/wsdlBugStudioSOAPWizardTypes.xsd"
+		namespace="http://wsdlBugStudioSOAPWizard.example.com/types/" />
+
 	<wsdl:message name="getCustomersByNameResponse">
-		<wsdl:part name="parameters" element="tns:getCustomersByNameResponse">
-		</wsdl:part>
+		<wsdl:part name="parameters" element="xsdl:getCustomersByNameResponse" />
 	</wsdl:message>
+
 	<wsdl:message name="getCustomersByName">
-		<wsdl:part name="parameters" element="tns:getCustomersByName">
-		</wsdl:part>
+		<wsdl:part name="parameters" element="xsdl:getCustomersByName" />
 	</wsdl:message>
+
 	<wsdl:portType name="wsdlBugStudioSOAPWizardService">
 		<wsdl:operation name="getCustomersByName">
 			<wsdl:input name="getCustomersByName" message="tns:getCustomersByName">
@@ -43,6 +25,7 @@
 			</wsdl:output>
 		</wsdl:operation>
 	</wsdl:portType>
+
 	<wsdl:binding name="wsdlBugStudioSOAPWizardServiceSoapBinding"
 		type="tns:wsdlBugStudioSOAPWizardService">
 		<soap:binding style="document"
@@ -58,9 +41,11 @@
 		</wsdl:operation>
 	</wsdl:binding>
 	<wsdl:service name="wsdlBugStudioSOAPWizardServiceService">
-		<wsdl:port name="wsdlBugStudioSOAPWizardServicePort" binding="tns:wsdlBugStudioSOAPWizardServiceSoapBinding">
+		<wsdl:port name="wsdlBugStudioSOAPWizardServicePort"
+			binding="tns:wsdlBugStudioSOAPWizardServiceSoapBinding">
 			<!-- embedded deployment -->
-			<soap:address location="http://localhost:9090/wsdlBugStudioSOAPWizardServicePort" />
+			<soap:address
+				location="http://localhost:9090/wsdlBugStudioSOAPWizardServicePort" />
 			<!-- Tomcat deployment, embedded or standalone -->
 			<!--soap:address location="http://localhost:8080/wsdl_first/services/wsdlBugStudioSOAPWizardServicePort"/ -->
 		</wsdl:port>
