@@ -17,7 +17,7 @@
  * under the License.
  */
 
-package com.example.customerservice.client;
+package com.example.client;
 
 import static org.junit.Assert.assertEquals;
 
@@ -25,10 +25,10 @@ import java.util.List;
 
 import org.junit.Test;
 
-import com.example.wsdlbugstudiosoapwizard.Customer;
 import com.example.wsdlbugstudiosoapwizard.WsdlBugStudioSOAPWizardService;
+import com.example.wsdlbugstudiosoapwizard.types.Customer;
 
-public final class CustomerServiceTester {
+public final class WsdlBugStudioSOAPWizardTester {
 
 	// The WsdlBugStudioSOAPWizardService proxy will be injected either by
 	// spring or by a direct call to the setter
@@ -45,26 +45,23 @@ public final class CustomerServiceTester {
 
 	@Test
 	public void testCustomerService() {
-		List<Customer> customers = null;
+		Customer customer = null;
 
 		// First we test the positive case where customers are found and we
 		// retreive
 		// a list of customers
 		System.out.println("Sending request for customers named Smith");
-		customers = customerService.getCustomersByName("Smith");
+		customer = (Customer) customerService.getCustomersByName("Smith");
 		System.out.println("Response received");
-		assertEquals(2, customers.size());
-		assertEquals("Smith", customers.get(0).getName());
-		customers = customerService.getCustomersByName("None");
+		assertEquals("Smith", customer.getName());
+		customer = (Customer) customerService.getCustomersByName("None");
+		assertEquals(null, customer);
 		// Assert.fail("We should get a NoSuchCustomerException here");
 
 		// The implementation of updateCustomer is set to sleep for some
 		// seconds.
 		// Still this method should return instantly as the method is declared
 		// as a one way method in the WSDL
-		Customer customer = new Customer();
-		customer.setName("Smith");
-		// customerService.updateCustomer(customer);
 
 		System.out.println("All calls were successful");
 	}

@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.example.customerservice.server;
+package com.example.server;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,10 +24,11 @@ import java.util.List;
 import javax.annotation.Resource;
 import javax.xml.ws.WebServiceContext;
 
-import com.example.wsdlbugstudiosoapwizard.Customer;
 import com.example.wsdlbugstudiosoapwizard.WsdlBugStudioSOAPWizardService;
+import com.example.wsdlbugstudiosoapwizard.types.Customer;
 
-public class CustomerServiceImpl implements WsdlBugStudioSOAPWizardService {
+public class WsdlBugStudioSOAPWizardServiceImpl implements
+		WsdlBugStudioSOAPWizardService {
 
 	/**
 	 * The WebServiceContext can be used to retrieve special attributes like the
@@ -36,19 +37,21 @@ public class CustomerServiceImpl implements WsdlBugStudioSOAPWizardService {
 	@Resource
 	WebServiceContext wsContext;
 
-	public List<Customer> getCustomersByName(String name) {
+	// public List<Customer> getCustomersByName(String name) {
+
+	@Override
+	public Object getCustomersByName(Object parameters) {
+		String name = (String) parameters;
+
 		if ("None".equals(name)) {
 			// do something fun
-		}
+			return null;
+		} else {
 
-		List<Customer> customers = new ArrayList<Customer>();
-		for (int c = 0; c < 2; c++) {
 			Customer cust = new Customer();
 			cust.setName(name);
-			customers.add(cust);
+			return cust;
 		}
-
-		return customers;
 	}
 
 	public void updateCustomer(Customer customer) {
@@ -60,5 +63,4 @@ public class CustomerServiceImpl implements WsdlBugStudioSOAPWizardService {
 		}
 		System.out.println("Customer was updated");
 	}
-
 }

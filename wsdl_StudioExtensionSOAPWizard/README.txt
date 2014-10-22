@@ -119,7 +119,7 @@ Then use Import / Existing projects into workspace and browse to the
 wsdl_first directory. Import the wsdl_first project.
 
 The demo can now be started using "Run as Java Application" on the
-CustomerServiceServer.java and the CustomerServiceClient. For the spring demo
+WsdlBugStudioSOAPWizardServiceServer.java and the CustomerServiceClient. For the spring demo
 run the classes CustomerServiceSpringClient.java or
 CustomerServiceSpringServer.java 
 

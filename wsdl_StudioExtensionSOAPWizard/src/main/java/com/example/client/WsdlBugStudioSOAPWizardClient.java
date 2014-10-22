@@ -16,7 +16,7 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package com.example.customerservice.client;
+package com.example.client;
 
 import java.io.File;
 import java.net.URL;
@@ -24,8 +24,8 @@ import java.net.URL;
 import com.example.wsdlbugstudiosoapwizard.WsdlBugStudioSOAPWizardService;
 import com.example.wsdlbugstudiosoapwizard.WsdlBugStudioSOAPWizardServiceService;
 
-public class CustomerServiceClient {
-    protected CustomerServiceClient() {
+public class WsdlBugStudioSOAPWizardClient {
+    protected WsdlBugStudioSOAPWizardClient() {
     }
     
     public static void main(String args[]) throws Exception {
@@ -48,7 +48,7 @@ public class CustomerServiceClient {
         WsdlBugStudioSOAPWizardService customerService = wsdlBugStudioSOAPWizardServiceService.getWsdlBugStudioSOAPWizardServicePort();
         
         // Initialize the test class and call the tests
-        CustomerServiceTester client = new CustomerServiceTester();
+        WsdlBugStudioSOAPWizardTester client = new WsdlBugStudioSOAPWizardTester();
         client.setCustomerService(customerService);
         client.testCustomerService();
         System.exit(0); 

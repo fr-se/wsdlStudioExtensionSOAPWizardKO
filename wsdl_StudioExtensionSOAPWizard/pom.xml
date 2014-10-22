@@ -118,7 +118,7 @@
                                     <goal>java</goal>
                                 </goals>
                                 <configuration>
-                                    <mainClass>com.example.customerservice.server.CustomerServiceServer</mainClass>
+                                    <mainClass>com.example.server.WsdlBugStudioSOAPWizardServiceServer</mainClass>
                                 </configuration>
                             </execution>
                         </executions>
@@ -148,7 +148,7 @@
                                     <goal>java</goal>
                                 </goals>
                                 <configuration>
-                                    <mainClass>com.example.customerservice.server.CustomerServiceServer</mainClass>
+                                    <mainClass>com.example.server.WsdlBugStudioSOAPWizardServiceServer</mainClass>
                                 </configuration>
                             </execution>
                         </executions>
@@ -178,7 +178,7 @@
                                     <goal>java</goal>
                                 </goals>
                                 <configuration>
-                                    <mainClass>com.example.customerservice.client.CustomerServiceClient</mainClass>
+                                    <mainClass>com.example.client.WsdlBugStudioSOAPWizardClient</mainClass>
                                     <arguments>
                                         <argument>src/main/resources/wsdlBugStudioSOAPWizardService.wsdl</argument>
                                     </arguments>
@@ -204,7 +204,7 @@
                                     <goal>java</goal>
                                 </goals>
                                 <configuration>
-                                    <mainClass>com.example.customerservice.client.CustomerServiceClient</mainClass>
+                                    <mainClass>com.example.client.WsdlBugStudioSOAPWizardClient</mainClass>
                                     <arguments>
                                         <argument>src/main/resources/wsdlBugStudioSOAPWizardService.wsdl</argument>
                                     </arguments>

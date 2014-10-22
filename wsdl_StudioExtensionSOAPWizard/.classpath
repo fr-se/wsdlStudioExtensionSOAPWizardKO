@@ -4,7 +4,7 @@
   <classpathentry kind="src" path="target/generated-sources/cxf" including="**/*.java"/>
   <classpathentry kind="src" path="src/main/resources" excluding="**/*.java"/>
   <classpathentry kind="output" path="target/classes"/>
-  <classpathentry kind="var" path="M2_REPO/javax/xml/bind/jaxb-api/2.1/jaxb-api-2.1.jar"/>
+  <classpathentry kind="var" path="M2_REPO/javax/xml/bind/jaxb-api/2.2.11/jaxb-api-2.2.11.jar"/>
   <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
   <classpathentry kind="var" path="M2_REPO/org/apache/cxf/cxf-rt-frontend-jaxws/3.0.1/cxf-rt-frontend-jaxws-3.0.1.jar" sourcepath="M2_REPO/org/apache/cxf/cxf-rt-frontend-jaxws/3.0.1/cxf-rt-frontend-jaxws-3.0.1-sources.jar"/>
   <classpathentry kind="var" path="M2_REPO/xml-resolver/xml-resolver/1.2/xml-resolver-1.2.jar"/>
@@ -17,15 +17,14 @@
   <classpathentry kind="var" path="M2_REPO/org/apache/cxf/cxf-rt-wsdl/3.0.1/cxf-rt-wsdl-3.0.1.jar"/>
   <classpathentry kind="var" path="M2_REPO/wsdl4j/wsdl4j/1.6.3/wsdl4j-1.6.3.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/apache/cxf/cxf-rt-databinding-jaxb/3.0.1/cxf-rt-databinding-jaxb-3.0.1.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/sun/xml/bind/jaxb-impl/2.1.14/jaxb-impl-2.1.14.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/sun/xml/bind/jaxb-core/2.1.14/jaxb-core-2.1.14.jar"/>
-  <classpathentry kind="var" path="M2_REPO/com/sun/xml/fastinfoset/FastInfoset/1.2.13/FastInfoset-1.2.13.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/sun/xml/bind/jaxb-impl/2.2.10-b140310.1920/jaxb-impl-2.2.10-b140310.1920.jar"/>
+  <classpathentry kind="var" path="M2_REPO/com/sun/xml/bind/jaxb-core/2.2.10-b140310.1920/jaxb-core-2.2.10-b140310.1920.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/apache/cxf/cxf-rt-bindings-xml/3.0.1/cxf-rt-bindings-xml-3.0.1.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/apache/cxf/cxf-rt-frontend-simple/3.0.1/cxf-rt-frontend-simple-3.0.1.jar"/>
+  <classpathentry kind="var" path="M2_REPO/org/apache/cxf/cxf-rt-transports-http/3.0.1/cxf-rt-transports-http-3.0.1.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/apache/cxf/cxf-rt-ws-addr/3.0.1/cxf-rt-ws-addr-3.0.1.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/apache/cxf/cxf-rt-ws-policy/3.0.1/cxf-rt-ws-policy-3.0.1.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/apache/neethi/neethi/3.0.3/neethi-3.0.3.jar"/>
-  <classpathentry kind="var" path="M2_REPO/org/apache/cxf/cxf-rt-transports-http/3.0.1/cxf-rt-transports-http-3.0.1.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/apache/cxf/xjc-utils/cxf-xjc-runtime/2.6.0/cxf-xjc-runtime-2.6.0.jar"/>
   <classpathentry kind="var" path="M2_REPO/org/springframework/spring-web/3.2.6.RELEASE/spring-web-3.2.6.RELEASE.jar"/>
   <classpathentry kind="var" path="M2_REPO/aopalliance/aopalliance/1.0/aopalliance-1.0.jar"/>

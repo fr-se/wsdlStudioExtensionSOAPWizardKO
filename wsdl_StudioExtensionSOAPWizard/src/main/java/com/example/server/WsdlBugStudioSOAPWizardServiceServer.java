@@ -17,7 +17,7 @@
  * under the License.
  */
 
-package com.example.customerservice.server;
+package com.example.server;
 
 import javax.xml.ws.Endpoint;
 
@@ -27,11 +27,11 @@ import org.apache.cxf.jaxws.EndpointImpl;
 
 import com.example.wsdlbugstudiosoapwizard.WsdlBugStudioSOAPWizardService;
 
-public class CustomerServiceServer {
+public class WsdlBugStudioSOAPWizardServiceServer {
 
-    protected CustomerServiceServer() throws Exception {
+    protected WsdlBugStudioSOAPWizardServiceServer() throws Exception {
         System.out.println("Starting Server");
-        WsdlBugStudioSOAPWizardService implementor = new CustomerServiceImpl();
+        WsdlBugStudioSOAPWizardService implementor = new WsdlBugStudioSOAPWizardServiceImpl();
         EndpointImpl ep = (EndpointImpl)Endpoint.publish("http://localhost:9090/wsdlBugStudioSOAPWizardServicePort",
                                                          implementor);
 
@@ -41,7 +41,7 @@ public class CustomerServiceServer {
     }
 
     public static void main(String args[]) throws Exception {
-        new CustomerServiceServer();
+        new WsdlBugStudioSOAPWizardServiceServer();
         System.out.println("Server ready...");
         Thread.sleep(5 * 60 * 1000);
         System.out.println("Server exiting");

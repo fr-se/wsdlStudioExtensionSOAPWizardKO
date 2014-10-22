@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<schema targetNamespace="http://wsdlBugStudioSOAPWizard.example.com/types/"
-	xmlns:tns="http://wsdlBugStudioSOAPWizard.example.com/types/" xmlns="http://www.w3.org/2001/XMLSchema">
+<schema targetNamespace="http://example.com/wsdlBugStudioSOAPWizard/types"
+	xmlns:tns="http://example.com/wsdlBugStudioSOAPWizard/types" xmlns="http://www.w3.org/2001/XMLSchema">
 
 	<element name="getCustomersByName" />
 
@@ -20,9 +20,8 @@
 
 	<complexType name="getCustomersByNameResponse">
 		<sequence>
-			<element maxOccurs="unbounded" minOccurs="0" name="return"
+			<element minOccurs="0" name="return"
 				type="tns:customer" />
 		</sequence>
 	</complexType>
-
 </schema>

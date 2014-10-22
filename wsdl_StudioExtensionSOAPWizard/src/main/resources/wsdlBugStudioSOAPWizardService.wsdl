@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <wsdl:definitions name="wsdlBugStudioSOAPWizardService"
 	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsdl="http://wsdlBugStudioSOAPWizard.example.com/types/"
-	xmlns:tns="http://wsdlBugStudioSOAPWizard.example.com/"
-	targetNamespace="http://wsdlBugStudioSOAPWizard.example.com/">
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsdl="http://example.com/wsdlBugStudioSOAPWizard/types"
+	xmlns:tns="http://example.com/wsdlBugStudioSOAPWizard/"
+	targetNamespace="http://example.com/wsdlBugStudioSOAPWizard/">
 
-	<wsdl:import
-		location="file:///Users/jantonio/GitHub/wsdlStudioExtensionSOAPWizardKO/wsdl_StudioExtensionSOAPWizard/src/main/resources/wsdlBugStudioSOAPWizardTypes.xsd"
-		namespace="http://wsdlBugStudioSOAPWizard.example.com/types/" />
+	<wsdl:types>
+		<xsd:schema>
+			<xsd:import namespace="http://example.com/wsdlBugStudioSOAPWizard/types"
+				schemaLocation="file:///Users/jantonio/GitHub/wsdlStudioExtensionSOAPWizardKO/wsdl_StudioExtensionSOAPWizard/src/main/resources/wsdlBugStudioSOAPWizardTypes.xsd" />
+		</xsd:schema>
+	</wsdl:types>
 
 	<wsdl:message name="getCustomersByNameResponse">
 		<wsdl:part name="parameters" element="xsdl:getCustomersByNameResponse" />
@@ -31,7 +34,7 @@
 		<soap:binding style="document"
 			transport="http://schemas.xmlsoap.org/soap/http" />
 		<wsdl:operation name="getCustomersByName">
-			<soap:operation soapAction="" style="document" />
+			<soap:operation soapAction="" />
 			<wsdl:input name="getCustomersByName">
 				<soap:body use="literal" />
 			</wsdl:input>
@@ -40,6 +43,7 @@
 			</wsdl:output>
 		</wsdl:operation>
 	</wsdl:binding>
+
 	<wsdl:service name="wsdlBugStudioSOAPWizardServiceService">
 		<wsdl:port name="wsdlBugStudioSOAPWizardServicePort"
 			binding="tns:wsdlBugStudioSOAPWizardServiceSoapBinding">
